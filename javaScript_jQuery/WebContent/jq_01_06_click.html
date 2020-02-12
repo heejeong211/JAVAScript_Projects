@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				
+				/* $(".logo").click(function(){
+					console.log("logo image click!");
+				}) */
+				
+				$(".logo").click(imgClickEventListener);
+				
+				function imgClickEventListener() {
+					console.log("logo image click!");
+					console.log("called imgClickEventListener");
+				}
+				
+			}); 
+		</script>
+	</head>
+	<body>
+		<div>
+			<img class="logo" src="img/lion.jpg">
+		</div>
+	</body>
+</html>

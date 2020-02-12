@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script>
+	
+		/* 복합 대입 연산자 */
+		var varComplex = 100;
+		varComplex += 3;
+		console.log("varComplex : " + varComplex);
+		
+		varComplex -= 3;
+		console.log("varComplex : " + varComplex);
+		
+		varComplex *= 3;
+		console.log("varComplex : " + varComplex);
+		
+		varComplex /= 3;
+		console.log("varComplex : " + varComplex);
+		
+		varComplex %= 3;
+		console.log("varComplex : " + varComplex);
+		
+		console.log("==================================");
+	
+		/* if문 */
+		var varNum = 100;
+		
+		if(varNum > 50) {
+			console.log("varNum > 50");
+		}
+		if(varNum <= 50) {
+			console.log("varNum <= 50");
+		}
+		console.log("varNum :" + varNum);
+		
+		console.log("==================================");
+		
+		/* if ~ else문 */
+		if(varNum < 50) {
+			console.log("varNum < 50");
+		} else {
+			console.log("varNum >= 50");
+		}
+		
+		console.log("==================================");
+		
+		/* if ~ else if 문 */
+		if(varNum > 200) {
+			console.log("varNum > 200");
+		} else if(varNum > 150) {
+			console.log("varNum > 150");
+		}  else if(varNum > 100) {
+			console.log("varNum > 100");
+		} else {
+			console.log("varNum <= 100");
+		}
+		
+		console.log("==================================");
+		
+		/* switch */
+		var varNum = 100; /* int, char, string  */
+		
+		switch(varNum) { 
+			case 200:
+				console.log("varNum : 200");
+				break;
+			
+			case 150:
+				console.log("varNum : 150");
+				break;
+			
+			default:
+				console.log("varNum : " + varNum);
+				break;
+		}
+		
+		console.log("==================================");
+		
+		/* 3항 연산자 */
+		
+		var varNum1 = "1234";
+		var varNum2 = "4321";
+		
+		var varResult = (varNum1 > varNum2) ? "varNum1 > varNum2" : "varNum1 <= varNum2"
+		console.log("varResult : " + varResult);
+		
+		console.log("==================================");
+		
+		/* for문 */
+		
+		for(var i = 0; i < 10; i++) {
+			console.log("i :" + i);
+		}
+		
+		console.log("==================================");
+		
+		/* 배열 객체 생성 방법 */ // 이거 좀 중요!!!
+		
+		// 크기를 지정하지 않은 배열 객체 생성
+		var varArr1 = new Array();
+		
+		// 크기를 지정한 배열 객체 생성
+		var varArr2 = new Array(5);
+		
+		// 배열 생성과 데이터저장을 동시에
+		var varArr3 = new Array(123, "ABC", true, function fun(){}, {}, undefined);
+		
+		// 배열 생성과 데이터저장을 동시에
+		var varArr4 = [123, "ABC", true, function fun(){}, {}, undefined]; // {} 이거 아님 주의
+		
+		console.log("varArr1 : " + varArr1);
+		console.log("varArr2 : " + varArr2);
+		console.log("varArr3 : " + varArr3);
+		console.log("varArr4 : " + varArr4);
+		
+		console.log("==================================");
+		
+		/* 배열 길이(크기) */
+		
+		var varArr = new Array(0, 1, 2, 3, 4, 5); // 값을 다이렉트로 지정함.
+		console.log("varArr.length : " + varArr.length);
+		
+		var varArrTemp = new Array(100); // 크기 지정
+		console.log("varArrTemp.length : " + varArrTemp.lenght);
+		
+		console.log("==================================");
+		
+		/* 인덱스 검색 indexOf() */
+		
+		var varArrIndex = new Array(123, "ABC", "가나다", "abc", "가나다", "123");
+		console.log("varArrIndex.indexOf(\"가나다\") : " + varArrIndex.indexOf("가나다"));
+		console.log("varArrIndex.lastIndexOf(\"가나다\") : " + varArrIndex.lastIndexOf("가나다"));
+		console.log("varArrIndex.indexOf(123) : " + varArrIndex.indexOf(123));
+		console.log("varArrIndex.lastIndexOf(123) : " + varArrIndex.lastIndexOf(123));
+		console.log("varArrIndex.indexOf(\"XYZ\") : " + varArrIndex.indexOf("XYZ"));
+		
+		console.log("==================================");
+		
+		/* shift(), pop() */
+		
+		var varArrShiftPop = new Array("가", "나", "다", "라", "마");
+		console.log("varArrShiftPop.shift() : " + varArrShiftPop.shift());
+		console.log("varArrShiftPop : " + varArrShiftPop);
+		
+		console.log("varArrShiftPop.pop() : " + varArrShiftPop.pop());
+		console.log("varArrShiftPop : " + varArrShiftPop);
+		
+		varArrShiftPop.unshift("가");
+		varArrShiftPop[varArrShiftPop.length] = "마";
+		console.log("varArrShiftPopOri : " + varArrShiftPop);
+		
+		console.log("==================================");
+		
+		/* 배열과 for문 */
+	
+		var varArr = [3, 4, 5, 6, 7];
+		
+		for(var i = 0; i < varArr.length; i++) {
+			console.log("varArr[" + i + "] :" + varArr[i]) // 자바에서는 value가 오지만 자바스크립트에서는 index가 온다.
+		}
+		
+		// for(초기값 in 배열) { 배열의 인덱스 0부터 순차적으로 접근 }
+		for(var i in varArr) {
+			console.log("varArr[" + i + "] :" + varArr[i])
+		}
+		
+		console.log("==================================");
+		
+		/* while문 */
+		
+		var varNum = 0;
+		var varSum = 0;
+		while(varNum < 10) {
+			
+			console.log("varNum : " + varNum);
+			varSum += varNum;
+			varNum++;
+		}
+		
+		console.log("varSum : " + varSum);
+		
+		console.log("==================================");
+		
+		/* do ~ while문 */
+		
+		var varNumber = 1234;
+		do {
+			console.log("varNumber : " + varNumber);
+			varNumber = varNumber + 10000;
+		} while(varNumber > 11234)
+			
+			console.log("==================================");
+		
+		
+		/* continue */
+		
+		var varResult = 0;
+		for(var i = 0 ; i < 10; i++) {
+			
+			if((i % 2 == 0) || (i % 3 == 0)) 
+				
+				continue;
+			
+			console.log("i : " + i);
+			varResult += i;
+		}
+		console.log("varResult : " + varResult);
+		
+		console.log("==================================");
+		
+		
+		/* break */
+		
+		var varNum = 0;
+		var varSum = 0;
+		while(varNum < 10) {
+			
+			console.log("varNum : " + varNum);
+			varSum += varNum;
+			varNum++;
+			
+			if(varSum > 20) {
+				console.log("varSum : " + varSum);
+				break;
+			}
+		}
+		
+		for(var i = 0; true; i ++) {
+			console.log("i : " + i);
+			if(i > 50)
+				break;
+		}
+		
+		console.log("==================================");
+		
+		 /* 명시(선언)적 함수 생성 */ // 이거 좀 중요!!!
+		
+		function funName() {
+			console.log("명시(선언)적 함수의 기능을 실행 합니다.")
+		}
+		 
+		console.log("==================================");
+		
+		/* 익명 함수 생성 */
+		var funAnonymous = function() {
+			console.log("익명 함수의 기능을 실행 합니다.")
+		}
+		
+		funName();
+		funAnonymous();
+		
+		console.log("funName함수 보기: \n" + funName);
+		console.log("funName함수 실행: \n" + funName());
+		console.log("funAnonymous함수 보기: \n" + funAnonymous);
+		console.log("funAnonymous함수 실행: \n" + funAnonymous()); 
+		
+		console.log("==================================");
+		
+		
+		
+		/* test */
+		
+		var arr =[5,4,3,2,1];
+
+		for(var i in arr) {
+			console.log("arr[" + i + "] :" + arr[i])
+		}
+
+		
+		
+		console.log("==================================");
+		
+		/* arguments */ // 이거 좀 중요!!!
+		
+		var varArr;
+		
+		function funName() {
+			return arguments;
+		}
+		
+		varArr = funName(1, 2, 3, 4, 5, 6, 7);
+		console.log("varArr : " + varArr);
+		console.log("varArr.length : " + varArr.lenght);
+		
+		for(var i in varArr) {
+			console.log("varArr[" + i + "] :" + varArr[i]);
+		}
+		
+		console.log("----------------------------------");
+		
+		varArr = funName("A", "B", "C", "D");
+		console.log("varArr :" + varArr);
+		console.log("varArr.length : " + varArr.length);
+		
+		for(var i in varArr) {
+			console.log("varArr[" + i + "] :" + varArr[i]);
+		}
+		
+		console.log("==================================");
+		
+		/* 반환 함수 */ // 이거 좀 중요!!!
+		
+		function funName() { // 명시적 함수
+			
+			return function(x) { // 익명함수
+				for(var i = 0; i < 10; i++) {
+					console.log(x + " * " + i + " = " + (x*i));
+				}
+			};
+		}
+		
+		var returnFun = funName(); // 일단 익명함수의 변수를 정하고 명시적 함수를 호출
+		returnFun(4); // 익명함수 x의 값을 넣어 줌.
+		
+		console.log("==================================");
+		
+		/* 클로저(closer): free variable(자유변수)에 의해서 함수가 닫혀(closed)있다. */ // 이거 매우매우 중요!!!
+		
+		function funName(x) {
+			
+			var varName= ":: 요청한" + x + "에 대한 구구단::";
+			
+			return function() {
+				console.log(varName);
+				for(var i = 1; i < 10; i++) {
+					console.log(x + " * " + i + " = " + (x*i));
+				}
+			};
+		}
+		
+		// 지역변수에 접근할 수 없다.(에러발생)
+		// console.log("varName : " + varName);
+		
+		var returnFun = funName(5); // 변수 생성하면서 명시적 함수 호출, 명시적 함수 메모리 원래는 지워지지만 자바스크립트에서는 안지워짐
+		returnFun(); // 익명함수 호출
+		
+		console.log("==================================");
+		
+		/* 내부함수 */
+		
+		function outFun(width, height) {
+			
+			console.log("triangle : " + triangle());
+			console.log("quadrangle : " + quadrangle());
+			
+			// 삼각형 면적 계산
+			function triangle() {
+				return (width * height) / 2;
+			}
+			
+			// 사각형 면적 계산
+			function quadrangle() {
+				return width * height;
+			}
+		}
+		
+		outFun(3,5);
+		
+		console.log("==================================");
+		
+		/* 콜백함수 */ // 이거 매우매우 중요!!!!
+		
+		function funcName(funCBF, funCBP, num) {
+			
+			for(var i = 1; i <= 10; i++) {
+				console.log(num + " * " + i + " = " + (num * i));
+				if(i < 10) funCBP(i);
+			}
+			
+			funCBF();
+		}
+		
+		function funCallBackProgress(n) {
+			
+			console.log((n * 10) + "% 진행 완료!");
+		}
+		
+		function funCallBackFinish() {
+			
+			console.log("서버 작업 종료!");
+		}
+		
+		funcName(funCallBackFinish, funCallBackProgress, 7);
+		
+		console.log("==================================");
+		
+		/* 내장함수 */
+		
+		/* alert("내장함수 : 기본적으로 제공하는 함수"); // 팝업창 뜨는거
+		console.log("내장함수 : 기본적으로 제공하는 함수");
+		
+		// 시간관련 함수
+		var timeoutId = setTimeout(function(){alert("3초 후 한번 실행됩니다.");}, 3000); // setTimeout 내장함수 겸 콜백함수
+		clearTimeout(timeoutId);
+		
+		var intervalId = setInterval(function(){console.log("2초 마다 계속 실행됩니다.");}, 2000);
+		clearInterval(intervalId); */
+		
+		var printTimeOutId = setTimeout(function() {
+												clearInterval(printIntervalId);
+												console.log("종료!");					
+												}, 7000); // 7초 뒤에 종료가 찍히기 때문에 제일 나중에 옴.
+		var printIntervalId = setInterval(function(){console.log("*");}, 2000); // 내부적으로 쓰레드(또다른 프로그램)를 이용해서 2초 뒤에 *이 찍히는 거임.
+		
+		// eval 함수 : 문자열을 코드(소스)로 이용
+		var varEval = "console.log('eval함수!')"; // 얘가 왜 더 먼저 찍힌 이유 : *이 2초 뒤에 찍으니까
+		eval(varEval);
+		
+		varEval = "document.write('<p>eval함수</p>')"; // 제이쿼리
+		eval(varEval);
+		
+		
+		
+		
+		</script>
+	</head>
+	<body>
+			
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script>
+		/* 기본 메소드 */
+		
+		$(document).ready(function(){
+			
+			// each() 배열 (for문) -> 콜백함수(함수안에 함수가 들어감)
+			$("p").each(function(index, item){
+				console.log($(item).text()); // .text()하게 되면 제일 첫번째 애가 출력됨.
+				// console.log($(this).text());  // item == this
+				if(index % 2 == 0) { // 짝수
+					$(item).css("background", "#dfdfdf");
+					// $(this).css("background", #dfdfdf); // item == this
+				} else { // 홀수
+					$(item).css("background", "#cccccc");
+					// $(this).css("background", #cccccc); // item == this
+				}
+			});
+			
+			// html() / text() // html에서 html 함수를 쓸 수 있는 것이 html 함수이다. text는 단순히 text만 컨트롤할 수 있다.
+			console.log("htmlMethod : " + $("#htmlMethod").html());
+			$("#htmlMethod").html("<strong>new</strong> " + $("#textMethod").html());
+			
+			console.log("textMethod : " + $("#textMethod").text());
+			$("#textMethod").text("new " + $("#textMethod").text());
+			
+			// addClsss() 클래스 속성 추가
+			// removeClsss() 클래스 속성 제거
+			$("#addClass").addClass("addCla");
+			$(".addCla").css("background", "#ff0000");
+			
+			$(".remCla").css("background", "#00ff00");
+			// $("#removeClass").removeClass("remCla");
+			// $(".remCla").removeClass("remCla");
+			$(".remCla").css("background", "#0000ff");
+			
+			// attr()  속성 추가
+			// attr()  속성 검사 (2개이상인 경우 첫번째 객체 이용)
+			// removeAttr(속성)  속성 제거
+			$("#attrMethod img").attr("src", "img/lion.jpg"); // 자손이라 2개 밖에 없음. 그래서 attr()을 이용해서 하나 추가함
+			console.log("#attrMethod img src : " + $("#attrMethod img").attr("src"));
+			
+			/* $("#attrMethod img").removeAttr("src"); // 이미지 지우는 것
+			console.log("#attrMethod img src : " + $("#attrMethod img").attr("src")); */
+			
+			//css()	스타일 추가
+			//css()	스타일 검사
+			$("#cssMethod").css("width", "300px").css("height", "100px");
+			$("#cssMethod").css("background", "#ff0000");
+			
+			console.log("cssMethod css width : " + $("#cssMethod").css("width")); // value값을 안적어 주면 해당 속성의 value값을 리턴한다.-> 300px
+			console.log("cssMethod css height : " + $("#cssMethod").css("height"));
+			console.log("cssMethod css background : " + $("#cssMethod").css("background"));
+			
+			//remove()	// 문서 객체 제거
+			//empty()	// 문서 객체 내부 제거
+			$("#removeMthod").remove(); // 태그 자체가 날아감
+			$("#emptyMthod").empty(); // 안에 있는 텍스트들만 날아감
+			
+		});
+		</script>
+	</head>
+	<body>
+		<p> Hello javascript! </p>
+		<p> Hello jQuery! </p>
+		<p> Hello node.js! </p>
+		
+		<div id="htmlMethod"> html() 메소드 </div>
+		<div id="textMethod"> text() 메소드 </div>
+		
+		<div id="addClass"> addClass() 메소드 </div>
+		<div id="removeClass" class="remCla"> removeClass() 메소드 </div> 
+		
+		<div id="attrMethod">
+			<img>
+			<br>
+			<img>
+		</div>
+		
+		<div id="cssMethod"> CSS METHOD </div>
+		
+		<div id="removeMthod"> Remove Object! </div>
+		<div id="emptyMthod"> Empty Object! </div>
+	</body>
+</html>

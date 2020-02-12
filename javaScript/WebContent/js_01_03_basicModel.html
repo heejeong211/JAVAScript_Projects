@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script>
+			/* basic model */
+			
+			window.onload = function() {
+				
+				var ce = document.getElementById("cEvent");
+				// 방법1 익명 함수
+				ce.onclick = function() {
+					console.log("click!");
+					/*// 이벤트 제거
+					ce.onclick = null; */
+				}
+				
+				/* 방법2 명시적 함수
+				ce.onclick = clickEventHandler;
+				function clickEventHandler() {
+					console.log("clickEventHandler!");
+				}*/
+			}
+			
+			
+			};
+		</script>
+		<style>
+			#cEvent {
+				width:200px; height:100px;
+				line-height:100px;
+				text-align: center;
+				font-size:1.2em;
+				background-color:skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cEvent">click event</div>
+	</body>
+</html>

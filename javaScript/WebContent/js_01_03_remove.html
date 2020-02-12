@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script>
+			/* dom - remove */
+			
+			window.onload = function() {
+			
+				var str = "";
+				str += "<p id='jsTitle'> javascript & node.js</p>";
+				str += "<img id='logoImg', src='./img/lion.jpg',";
+				str += "width='170', height='67', tempData='logoImg'>";
+			
+				document.body.innerHTML = str;
+			
+				var titleNode = document.getElementById("jsTitle"); // getElement를 가져오는데 By는 수단, Id라는 수단으로 getElement를 가져옴.
+				titleNode.parentNode.removeChild(titleNode);
+			
+				var logoNode = document.getElementById("logoImg");
+				logoNode.parentNode.removeChild(logoNode);
+			
+			};
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script>
+			/* dom - text node */
+			
+			window.onload = function() {
+				
+				var elementNode = document.createElement("p"); // p태그를 만들어라.
+				var textNode = document.createTextNode("javascript & node.js"); // javascript & node.js 글을 만들어라
+				
+				elementNode.appendChild(textNode); // append 뒤에 붙이다. elementNode뒤에 textNode를 붙임
+				document.body.appendChild(elementNode); // 그걸 바디에 넣음. 그래서 바디에 <p>javascript & node.js</p> 이렇게 됨.
+			};
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

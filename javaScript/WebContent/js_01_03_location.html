@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script>
+			/* Location 객체 */
+			
+			window.onload = function() { // window.onload 에서 window 지워도 작동함
+				location.href = "http://www.naver.com"; // 바로 실행함. 어딜 저장하고 그런거 아님
+				
+				//location.assign("http://www.naver.com"); 히스토리 남기는냐 안남기는냐의 차이 (남김)
+				//location.replace("http://www.naver.com"); (안남김)
+				
+				/* setTimeout(function() {
+					console.log("Location.reload!");
+					location.reload();
+				}, 3000); */
+			};
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

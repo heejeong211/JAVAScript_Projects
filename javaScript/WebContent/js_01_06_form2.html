@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script>
+			
+			/* form 태그 이벤트2 */ // 이거 중요!! 자주 사용!!
+			
+			window.onload = function() {
+				var lf = document.getElementById("loginForm");
+				lf.onsubmit = function() {
+					if(document.getElementById("uId").value == "") {
+						return false;
+					} else if(document.getElementById("uPw").value == "") {
+						return false;
+					} else {
+						alert("login ok!!");
+						return true; // true 일 때만 action 실행
+					}
+				};
+				
+				var resBtn = document.getElementById("resBtn");
+				resBtn.onclick = function() {
+					alert("reset ok!!");
+					document.getElementById("loginForm").reset();
+				};
+			}
+		</script>
+	</head>
+	<body>
+		<form id="loginForm" action="http://www.google.com">
+			USER ID : <input id="uId" type="text" name="uId"><br />
+			USER PW : <input id="uPw" type="password" name="upw"><br />
+			<input id="sbmBtn" type="submit" value="SUBMIT">
+			<input id="resBtn" type="reset" value="RESET">
+		</form>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				
+				function eventHandler(event){
+					console.log("click!!");
+					console.log("this : " + this);
+					
+					for(var key in event) {
+						console.log(key + " : " + event[key]);
+					}
+				};
+				
+				$("#ovjDiv").click(eventHandler); // this = ovjDiv
+				$("#ovjpar").click(eventHandler); // this = ovjpar
+				
+			}); 
+		</script>
+	</head>
+	<body>
+		<div id="objDiv"> Object Division </div>
+		<p id="objpar"> Object Paragraph </p>
+	</body>
+</html>

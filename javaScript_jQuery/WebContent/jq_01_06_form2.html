@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){ // 알림은 안되지만 그래도 됨. 그래도 도큐먼트는 무조건 써야함!!!!!
+				
+				$("#sbmBtn").click(function() {
+					if($("#uId").val() == "") {
+						alert("user id blank!");
+						event.preventDefault(); // 이 쪽(구글)으로 전송하지 말라는 의미 = return false;
+					} else if($("uPw").val() == "") {
+						alert("user pw blank!");// 이 쪽(구글)으로 전송하지 말라는 의미 = return false;
+						event.preventDefault();
+					} else {
+						alert("login ok!");
+					}
+				});
+				
+				$("#resBtn").click(function() {
+					alert("reset ok!!");
+				});
+				
+			}); 
+		</script>
+	</head>
+	<body>
+		<form id="loginForm" action="http://www.google.com">
+			USER ID: <input id="uId" type="text" name="uId"><br />
+			USER PW: <input id="uPw" type="password" name="uPw"><br />
+			<input id="sbmBtn" type="submit" value="SUBMIT">
+			<input id="resBtn" type="reset" value="RESET">
+		</form> 
+	</body>
+</html>

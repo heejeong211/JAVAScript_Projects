@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script>
+			/* standard handler model */
+			
+			window.onload = function() {
+				
+				function addHandler() {
+					console.log("click!");
+				}
+				
+				function removeHandler() {
+					console.log("event remove!!");
+					ceA.removeEventListener("click", addHandler, false);
+				};
+				
+				var ceA = document.getElementById("cEventAdd");
+				ceA.addEventListener("click", addHandler, false); // addHandler 콜백함수(함수안에 함수가 있음)
+				
+				var ceR = document.getElementById("cEventRem");
+				ceR.addEventListener("click", removeHandler, false);
+			
+			};
+		</script>
+		<style>
+			#cEventAdd {
+				width:200px; height:100px;
+				line-height:100px;
+				text-align: center;
+				font-size:1.2em;
+				background-color:skyblue;
+			}
+			#cEventRem {
+				width:200px; height:100px;
+				line-height:100px;
+				text-align: center;
+				font-size:1.2em;
+				background-color:tomato;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cEventAdd">click event</div>
+		<div id="cEventRem">romeve event</div>
+	</body>
+</html>

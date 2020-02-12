@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		
+		<script>
+			/* 객체 이동 */
+			
+			$(document).ready(function(){
+				
+				$("#wrap > .contents1 > .p").appendTo($("#wrap > .contents2")); // 위치가 바뀜. contents2가 위로 올라와서 스타일 지정도 얘가 우위가 됨
+			
+			});
+			
+		</script>
+		
+		<style>
+			#wrap .contents1 .p {
+				background: #ff0000; /* 빨간색인데 노란색으로 나옴 */
+			}
+			
+			#wrap .contents2 .p {
+				background: #ffff00;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="contents1">
+				<p class="p">contents1</p>
+			</div>
+			<div class="contents2">
+				<p class="p">contents2</p>
+			</div>
+		</div>
+	</body>
+</html>

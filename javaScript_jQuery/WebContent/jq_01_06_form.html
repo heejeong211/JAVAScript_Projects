@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				
+				$("#sbmBtn").click(function() {
+					if($("#uId").val() == "") {
+						alert("user id blank!");
+					} else if($("uPw").val() == "") {
+						alert("user pw blank!");
+					} else {
+						alert("login ok!");
+						$("#loginForm").submit(); // 밑에 타입을 버튼이라고 주면 submit함수 사용함.
+					}
+				});
+				
+				$("#resBtn").click(function() {
+					alert("reset ok!!");
+					$("#loginForm")[0].reset();// 배열 값을 줘야 한다.
+				});
+				
+			}); /* 도큐먼트는 바디에서 부터 다 읽고 도큐먼트를 실행해야 하는데 도큐먼트가 없으면 그냥 위에서 부터 읽기 때문에 에러가 나는 것임. */
+		</script>
+	</head>
+	<body>
+		<form id="loginForm" action="http://www.google.com">
+			USER ID: <input id="uId" type="text" name="uId"><br />
+			USER PW: <input id="uPw" type="password" name="uPw"><br />
+			<input id="sbmBtn" type="button" value="SUBMIT">
+			<input id="resBtn" type="button" value="RESET">
+		</form> 
+		
+		<!-- <script>
+		$("#sbmBtn").click(function() {
+			if($("#uId").val() == "") {
+				alert("user id blank!");
+			} else if($("uPw").val() == "") {
+				alert("user pw blank!");
+			} else {
+				alert("login ok!");
+				$("#loginForm").submit(); // 밑에 타입을 버튼이라고 주면 submit함수 사용함.
+			}
+		});
+		
+		$("#resBtn").click(function() {
+			alert("reset ok!!");
+			$("#loginForm")[0].reset();// 배열 값을 줘야 한다.
+		});
+		</script> --><!-- 이렇게 해도 됨. 이미 바디를 다 읽은 상태임. 메모리에 올라가 있음. 그래서 도큐먼트가 없어도 됨. 그래도 도큐먼트는 꼭 넣어야 함 -->
+	</body>
+</html>

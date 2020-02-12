@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(function() {
+				
+				$("#listButton").click(function() {
+					
+					$.ajax({
+						type: 'post', // form태그에서는 method="post"
+						url: './list.html', // not_Ajax에서는 form태그를 이용해서 action="list.html"로 한다.
+						dataType: 'html', // 내가 서버쪽에서 받아 오는 타입을 지정
+						success: function(data) { // 이 부분이 비동기
+							$("#listDiv").html(data); // 서버에서 받아오는 시간을 기다리면 동기식, 안 기다리면 비동기식 
+							// 그냥 읽어드리면서 바로 뿌림. 쓰레드로 돌리기 때문에 이게 가능함.
+						}
+					});
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" id="listButton" value="리스트출력">
+	</body>
+</html>

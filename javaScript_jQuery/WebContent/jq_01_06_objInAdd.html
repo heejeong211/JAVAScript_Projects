@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		
+		<script>
+			/* 객체 삽입 및 추가 */
+			
+			$(document).ready(function(){
+				
+				var wrapObj = $("#wrap");
+				
+				var divObj = $("<div> Hello jQuery! </div>");
+			
+				/* 객체 삽입 */
+				
+				/* divObj.appendTo(wrapObj); // .appendTo() 마지막에 추가
+				divObj.append(wrapObj);  // .append()
+				divObj.prependTo(wrapObj) // .prependTo() 위에 추가
+				divObj.prepend(wrapObj) // .prepend() */
+				
+				/* 객체 추가 */
+				
+				/* divObj.insertAfter(wrapObj); // .insertAfter()
+				wrapObj.after(divObj); // .after()
+				wrapObj.insertBefore(wrapObj); // insertBefore()
+				wrapObj.before(divOvj); // before() */
+			
+			});
+			
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+			<div>content</div>
+		</div>
+	</body>
+</html>

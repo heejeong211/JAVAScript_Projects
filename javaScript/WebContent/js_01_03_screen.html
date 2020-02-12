@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script>
+			/* Screen 객체 */
+			
+			function openWin(url, width, height) {
+				
+				console.log("screen.width: " + screen.width);
+				console.log("screen.height: " + screen.height);
+				
+				var left = screen.width/2  - width/2; // 중앙으로 새창을 띄워라
+				var top = screen.height/2 - height/2;
+				var opt = "width = " + width + ", height = " + height + ", left = " + left + ", top = " + top;
+				
+				open(url, "newWin", opt); // open -> window.open임. newWin 새로운 창을 띄우라는 의미
+			}
+			
+			openWin("http://www.naver.com", 800, 500);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

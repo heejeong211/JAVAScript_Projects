@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				
+				$("*").css("fontSize", "1.1em"); // 전체 선택자
+				$("li").css("color", "#0000ff"); // 태그 선택자
+				$("#item").css("background", "#ffff00").css("width", "300px"); // 아이디 선택자
+				$(".seoul").css("background", "#ff0000"); // 클래스 선택자 (태그 선택자 보다 우위에 있음) 같은 선택자를 밑에 쓰면 덮어씌우기 됨
+				$("#wrap p").css("border", "2px solid #cccccc"); // 후손 선택자
+				$("#wrap > p").css("border", "5px solid #cccccc"); // 자손 선택자
+			}); 
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+			<p>jQuery selector</p>
+			
+			<div id="content">
+				<h1>content</h1>
+				<p>ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅌ</p>
+				<p>ABCDEFGHIJKLMN</p>
+			</div>
+			
+			<div id="item">
+				<ul>
+					<li class="seoul">서울</li> <!-- style="color:gray" 이거 안먹음.. 위에꺼 보다 우선순위 밑이라서 -->
+					<li class="gyeonggi_do">경기도</li>
+					<li>충청도</li>
+					<li>전라도</li>
+					<li>경상도</li>
+					<li>강원도</li>
+					<li>제주도</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
